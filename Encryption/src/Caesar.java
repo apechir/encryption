@@ -22,7 +22,7 @@ public class Caesar {
             else {
                 for (int j = 0; j < 26; j++) {
                     if (text.charAt(i) == chars[j]) {
-                        newText = newText + chars[j+this.key-26*(((j+this.key) >= 26) ? 1 : 0)];
+                        newText = newText + chars[(j+this.key) % 26];
                     }
                 }
             }
@@ -39,7 +39,7 @@ public class Caesar {
             else {
                 for (int j = 0; j < 26; j++) {
                     if (text.charAt(i) == chars[j]) {
-                        newText = newText + chars[j-this.key+26*(((j-this.key) < 0) ? 1 : 0)];
+                        newText = newText + chars[(j-this.key) % 26];
                     }
                 }
             }
